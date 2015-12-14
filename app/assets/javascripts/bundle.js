@@ -86,10 +86,21 @@
 					console.log(savedTweet);
 					var newTweetsList = _this2.state.tweetsList;
 					newTweetsList.unshift(savedTweet);
-					_this2.setState({ tweetsList: newTweetsList });
+					_this2.setState(_this2.formattedTweets(newTweetsList));
 				}).error(function (error) {
 					return console.log(error);
 				});
+			}
+		}, {
+			key: 'formattedTweets',
+			value: function formattedTweets(tweetsList) {
+				var formattedList = tweetsList.map(function (tweet) {
+					tweet.formattedDate = moment(tweet.created_at).fromNow();
+					return tweet;
+				});
+				return {
+					tweetsList: formattedList
+				};
 			}
 		}, {
 			key: 'componentDidMount',
@@ -97,7 +108,7 @@
 				var _this3 = this;
 
 				$.ajax("/tweets").success(function (data) {
-					return _this3.setState({ tweetsList: data });
+					return _this3.setState(_this3.formattedTweets(data));
 				}).error(function (error) {
 					return console.log(error);
 				});
@@ -283,16 +294,17 @@
 				return React.createElement(
 					"li",
 					{ className: "collection-item avatar" },
-					React.createElement(
-						"i",
-						{ className: "material-icons circle" },
-						" person_pin"
-					),
+					React.createElement("img", { className: "circle", src: this.props.gravatar }),
 					React.createElement(
 						"span",
 						{ className: "title" },
 						" ",
 						this.props.name
+					),
+					React.createElement(
+						"time",
+						null,
+						this.props.formattedDate
 					),
 					React.createElement(
 						"p",
