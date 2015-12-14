@@ -5713,3 +5713,1210 @@ Processing by TweetsController#index as */*
   [1m[36mTweet Load (0.5ms)[0m  [1mSELECT "tweets".* FROM "tweets"  ORDER BY "tweets"."created_at" DESC[0m
   [1m[35mUser Load (0.9ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" IN (1)
 Completed 200 OK in 14ms (Views: 11.8ms | ActiveRecord: 1.4ms)
+
+
+Started POST "/tweets" for ::1 at 2015-12-13 21:04:55 -0500
+Processing by TweetsController#create as */*
+  Parameters: {"body"=>"Tweet with Gravatar!"}
+  [1m[36mUser Load (0.6ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  [1m[35m (1.5ms)[0m  BEGIN
+  [1m[36mSQL (1.2ms)[0m  [1mINSERT INTO "tweets" ("body", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["body", "Tweet with Gravatar!"], ["user_id", 1], ["created_at", "2015-12-14 02:04:55.047894"], ["updated_at", "2015-12-14 02:04:55.047894"]]
+  [1m[35m (8.1ms)[0m  COMMIT
+  [1m[36mUser Load (2.4ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 1]]
+Completed 200 OK in 22ms (Views: 2.5ms | ActiveRecord: 13.7ms)
+
+
+Started GET "/" for ::1 at 2015-12-13 21:50:09 -0500
+Processing by HomeController#index as HTML
+  [1m[35mUser Load (2.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  Rendered home/index.html.erb within layouts/application (2.6ms)
+Completed 200 OK in 280ms (Views: 271.4ms | ActiveRecord: 2.1ms)
+
+
+Started GET "/assets/home.self-8e47fed4825384b9266fa1040a4adaa0211fe386d09c7fa88b2e148943f7cacd.css?body=1" for ::1 at 2015-12-13 21:50:09 -0500
+
+
+Started GET "/assets/tweets.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-12-13 21:50:10 -0500
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for ::1 at 2015-12-13 21:50:10 -0500
+
+
+Started GET "/assets/jquery.self-a714331225dda820228db323939889f149aec0127aeb06255646b616ba1ca419.js?body=1" for ::1 at 2015-12-13 21:50:10 -0500
+
+
+Started GET "/assets/profile.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-12-13 21:50:10 -0500
+
+
+Started GET "/assets/jquery_ujs.self-d456baa54c1fa6be2ec3711f0a72ddf7a5b2f34a6b4f515f33767d6207b7d4b3.js?body=1" for ::1 at 2015-12-13 21:50:10 -0500
+
+
+Started GET "/assets/development/react.self-bf407d871f2396ec7dcba5eb91bd3f3955401699aef9b87f48b6e1694c24a078.js?body=1" for ::1 at 2015-12-13 21:50:10 -0500
+
+
+Started GET "/assets/bundle.self-49bc3a9078e60621a8efdfeb8bd1ba2f1977ed033b8c3e0834c3afb9a66ea469.js?body=1" for ::1 at 2015-12-13 21:50:10 -0500
+
+
+Started GET "/assets/profile.self-19a187bec6cdb96d6de80a61c16c857c613536adf9138476bd367db38d282635.js?body=1" for ::1 at 2015-12-13 21:50:10 -0500
+
+
+Started GET "/assets/tweets.self-19a187bec6cdb96d6de80a61c16c857c613536adf9138476bd367db38d282635.js?body=1" for ::1 at 2015-12-13 21:50:10 -0500
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for ::1 at 2015-12-13 21:50:10 -0500
+
+
+Started GET "/tweets" for ::1 at 2015-12-13 21:50:10 -0500
+Processing by TweetsController#index as */*
+  [1m[36mTweet Load (2.2ms)[0m  [1mSELECT "tweets".* FROM "tweets"  ORDER BY "tweets"."created_at" DESC[0m
+  [1m[35mUser Load (0.7ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" IN (1)
+Completed 200 OK in 13ms (Views: 9.3ms | ActiveRecord: 2.9ms)
+
+
+Started GET "/tweets" for ::1 at 2015-12-13 21:50:15 -0500
+Processing by TweetsController#index as */*
+  [1m[36mTweet Load (1.3ms)[0m  [1mSELECT "tweets".* FROM "tweets"  ORDER BY "tweets"."created_at" DESC[0m
+  [1m[35mUser Load (0.6ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" IN (1)
+Completed 200 OK in 13ms (Views: 10.0ms | ActiveRecord: 2.0ms)
+
+
+Started GET "/" for ::1 at 2015-12-13 21:52:08 -0500
+Processing by HomeController#index as HTML
+  [1m[36mUser Load (0.8ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  Rendered home/index.html.erb within layouts/application (0.3ms)
+Completed 200 OK in 59ms (Views: 55.3ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/assets/home.self-8e47fed4825384b9266fa1040a4adaa0211fe386d09c7fa88b2e148943f7cacd.css?body=1" for ::1 at 2015-12-13 21:52:09 -0500
+
+
+Started GET "/assets/tweets.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-12-13 21:52:09 -0500
+
+
+Started GET "/assets/development/react.self-bf407d871f2396ec7dcba5eb91bd3f3955401699aef9b87f48b6e1694c24a078.js?body=1" for ::1 at 2015-12-13 21:52:09 -0500
+
+
+Started GET "/assets/jquery_ujs.self-d456baa54c1fa6be2ec3711f0a72ddf7a5b2f34a6b4f515f33767d6207b7d4b3.js?body=1" for ::1 at 2015-12-13 21:52:09 -0500
+
+
+Started GET "/assets/profile.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-12-13 21:52:09 -0500
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for ::1 at 2015-12-13 21:52:09 -0500
+
+
+Started GET "/assets/jquery.self-a714331225dda820228db323939889f149aec0127aeb06255646b616ba1ca419.js?body=1" for ::1 at 2015-12-13 21:52:09 -0500
+
+
+Started GET "/assets/bundle.self-49bc3a9078e60621a8efdfeb8bd1ba2f1977ed033b8c3e0834c3afb9a66ea469.js?body=1" for ::1 at 2015-12-13 21:52:09 -0500
+
+
+Started GET "/assets/profile.self-19a187bec6cdb96d6de80a61c16c857c613536adf9138476bd367db38d282635.js?body=1" for ::1 at 2015-12-13 21:52:09 -0500
+
+
+Started GET "/assets/tweets.self-19a187bec6cdb96d6de80a61c16c857c613536adf9138476bd367db38d282635.js?body=1" for ::1 at 2015-12-13 21:52:09 -0500
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for ::1 at 2015-12-13 21:52:09 -0500
+
+
+Started GET "/tweets" for ::1 at 2015-12-13 21:52:09 -0500
+Processing by TweetsController#index as */*
+  [1m[35mTweet Load (1.0ms)[0m  SELECT "tweets".* FROM "tweets"  ORDER BY "tweets"."created_at" DESC
+  [1m[36mUser Load (0.6ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" IN (1)[0m
+Completed 200 OK in 20ms (Views: 17.6ms | ActiveRecord: 1.6ms)
+
+
+Started GET "/tweets" for ::1 at 2015-12-13 21:52:10 -0500
+Processing by TweetsController#index as */*
+  [1m[35mTweet Load (0.9ms)[0m  SELECT "tweets".* FROM "tweets"  ORDER BY "tweets"."created_at" DESC
+  [1m[36mUser Load (0.5ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" IN (1)[0m
+Completed 200 OK in 9ms (Views: 6.6ms | ActiveRecord: 1.4ms)
+
+
+Started GET "/" for ::1 at 2015-12-13 21:55:56 -0500
+Processing by HomeController#index as HTML
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  Rendered home/index.html.erb within layouts/application (0.1ms)
+Completed 200 OK in 191ms (Views: 189.0ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/home.self-8e47fed4825384b9266fa1040a4adaa0211fe386d09c7fa88b2e148943f7cacd.css?body=1" for ::1 at 2015-12-13 21:55:57 -0500
+
+
+Started GET "/assets/profile.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-12-13 21:55:57 -0500
+
+
+Started GET "/assets/tweets.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-12-13 21:55:57 -0500
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for ::1 at 2015-12-13 21:55:57 -0500
+
+
+Started GET "/assets/jquery.self-a714331225dda820228db323939889f149aec0127aeb06255646b616ba1ca419.js?body=1" for ::1 at 2015-12-13 21:55:57 -0500
+
+
+Started GET "/assets/jquery_ujs.self-d456baa54c1fa6be2ec3711f0a72ddf7a5b2f34a6b4f515f33767d6207b7d4b3.js?body=1" for ::1 at 2015-12-13 21:55:57 -0500
+
+
+Started GET "/assets/development/react.self-bf407d871f2396ec7dcba5eb91bd3f3955401699aef9b87f48b6e1694c24a078.js?body=1" for ::1 at 2015-12-13 21:55:57 -0500
+
+
+Started GET "/assets/bundle.self-ff791bca9d7e634e61f4ecb499f4613d56c2d9ef2b4b4e7a44ffb9435ce2b856.js?body=1" for ::1 at 2015-12-13 21:55:57 -0500
+
+
+Started GET "/assets/profile.self-19a187bec6cdb96d6de80a61c16c857c613536adf9138476bd367db38d282635.js?body=1" for ::1 at 2015-12-13 21:55:57 -0500
+
+
+Started GET "/assets/tweets.self-19a187bec6cdb96d6de80a61c16c857c613536adf9138476bd367db38d282635.js?body=1" for ::1 at 2015-12-13 21:55:57 -0500
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for ::1 at 2015-12-13 21:55:57 -0500
+
+
+Started GET "/tweets" for ::1 at 2015-12-13 21:55:57 -0500
+Processing by TweetsController#index as */*
+  [1m[36mTweet Load (0.5ms)[0m  [1mSELECT "tweets".* FROM "tweets"  ORDER BY "tweets"."created_at" DESC[0m
+  [1m[35mUser Load (0.6ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" IN (1)
+Completed 200 OK in 12ms (Views: 10.1ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/tweets" for ::1 at 2015-12-13 21:56:00 -0500
+Processing by TweetsController#index as */*
+  [1m[36mTweet Load (0.4ms)[0m  [1mSELECT "tweets".* FROM "tweets"  ORDER BY "tweets"."created_at" DESC[0m
+  [1m[35mUser Load (0.4ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" IN (1)
+Completed 200 OK in 10ms (Views: 8.9ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/" for ::1 at 2015-12-13 21:56:43 -0500
+Processing by HomeController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  Rendered home/index.html.erb within layouts/application (0.2ms)
+Completed 200 OK in 203ms (Views: 200.9ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/profile.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-12-13 21:56:43 -0500
+
+
+Started GET "/assets/tweets.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-12-13 21:56:43 -0500
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for ::1 at 2015-12-13 21:56:43 -0500
+
+
+Started GET "/assets/jquery.self-a714331225dda820228db323939889f149aec0127aeb06255646b616ba1ca419.js?body=1" for ::1 at 2015-12-13 21:56:43 -0500
+
+
+Started GET "/assets/home.self-8e47fed4825384b9266fa1040a4adaa0211fe386d09c7fa88b2e148943f7cacd.css?body=1" for ::1 at 2015-12-13 21:56:43 -0500
+
+
+Started GET "/assets/jquery_ujs.self-d456baa54c1fa6be2ec3711f0a72ddf7a5b2f34a6b4f515f33767d6207b7d4b3.js?body=1" for ::1 at 2015-12-13 21:56:43 -0500
+
+
+Started GET "/assets/development/react.self-bf407d871f2396ec7dcba5eb91bd3f3955401699aef9b87f48b6e1694c24a078.js?body=1" for ::1 at 2015-12-13 21:56:43 -0500
+
+
+Started GET "/assets/bundle.self-4876182d113ec5f070570c061546e79a2ad8d3ca18fefe7836341b69046ed424.js?body=1" for ::1 at 2015-12-13 21:56:43 -0500
+
+
+Started GET "/assets/profile.self-19a187bec6cdb96d6de80a61c16c857c613536adf9138476bd367db38d282635.js?body=1" for ::1 at 2015-12-13 21:56:43 -0500
+
+
+Started GET "/assets/tweets.self-19a187bec6cdb96d6de80a61c16c857c613536adf9138476bd367db38d282635.js?body=1" for ::1 at 2015-12-13 21:56:43 -0500
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for ::1 at 2015-12-13 21:56:43 -0500
+
+
+Started GET "/tweets" for ::1 at 2015-12-13 21:56:44 -0500
+Processing by TweetsController#index as */*
+  [1m[35mTweet Load (0.4ms)[0m  SELECT "tweets".* FROM "tweets"  ORDER BY "tweets"."created_at" DESC
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" IN (1)[0m
+Completed 200 OK in 8ms (Views: 6.8ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/tweets" for ::1 at 2015-12-13 21:56:44 -0500
+Processing by TweetsController#index as */*
+  [1m[35mTweet Load (0.4ms)[0m  SELECT "tweets".* FROM "tweets"  ORDER BY "tweets"."created_at" DESC
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" IN (1)[0m
+Completed 200 OK in 8ms (Views: 7.0ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/" for ::1 at 2015-12-13 21:57:19 -0500
+Processing by HomeController#index as HTML
+  [1m[35mUser Load (0.4ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  Rendered home/index.html.erb within layouts/application (0.2ms)
+Completed 200 OK in 247ms (Views: 243.0ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/assets/home.self-8e47fed4825384b9266fa1040a4adaa0211fe386d09c7fa88b2e148943f7cacd.css?body=1" for ::1 at 2015-12-13 21:57:19 -0500
+
+
+Started GET "/assets/profile.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-12-13 21:57:19 -0500
+
+
+Started GET "/assets/tweets.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-12-13 21:57:19 -0500
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for ::1 at 2015-12-13 21:57:19 -0500
+
+
+Started GET "/assets/jquery.self-a714331225dda820228db323939889f149aec0127aeb06255646b616ba1ca419.js?body=1" for ::1 at 2015-12-13 21:57:19 -0500
+
+
+Started GET "/assets/jquery_ujs.self-d456baa54c1fa6be2ec3711f0a72ddf7a5b2f34a6b4f515f33767d6207b7d4b3.js?body=1" for ::1 at 2015-12-13 21:57:19 -0500
+
+
+Started GET "/assets/development/react.self-bf407d871f2396ec7dcba5eb91bd3f3955401699aef9b87f48b6e1694c24a078.js?body=1" for ::1 at 2015-12-13 21:57:19 -0500
+
+
+Started GET "/assets/bundle.self-55ce5af524d07458288e3a2c180611daae9aceea040443fa8b8cec86b37430b3.js?body=1" for ::1 at 2015-12-13 21:57:19 -0500
+
+
+Started GET "/assets/profile.self-19a187bec6cdb96d6de80a61c16c857c613536adf9138476bd367db38d282635.js?body=1" for ::1 at 2015-12-13 21:57:19 -0500
+
+
+Started GET "/assets/tweets.self-19a187bec6cdb96d6de80a61c16c857c613536adf9138476bd367db38d282635.js?body=1" for ::1 at 2015-12-13 21:57:19 -0500
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for ::1 at 2015-12-13 21:57:19 -0500
+
+
+Started GET "/tweets" for ::1 at 2015-12-13 21:57:20 -0500
+Processing by TweetsController#index as */*
+  [1m[36mTweet Load (0.5ms)[0m  [1mSELECT "tweets".* FROM "tweets"  ORDER BY "tweets"."created_at" DESC[0m
+  [1m[35mUser Load (0.4ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" IN (1)
+Completed 200 OK in 10ms (Views: 8.2ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/tweets" for ::1 at 2015-12-13 21:57:20 -0500
+Processing by TweetsController#index as */*
+  [1m[36mTweet Load (0.6ms)[0m  [1mSELECT "tweets".* FROM "tweets"  ORDER BY "tweets"."created_at" DESC[0m
+  [1m[35mUser Load (0.7ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" IN (1)
+Completed 200 OK in 12ms (Views: 10.3ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/" for ::1 at 2015-12-13 22:05:28 -0500
+Processing by HomeController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  Rendered home/index.html.erb within layouts/application (0.3ms)
+Completed 200 OK in 222ms (Views: 220.7ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/home.self-8e47fed4825384b9266fa1040a4adaa0211fe386d09c7fa88b2e148943f7cacd.css?body=1" for ::1 at 2015-12-13 22:05:29 -0500
+
+
+Started GET "/assets/tweets.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-12-13 22:05:29 -0500
+
+
+Started GET "/assets/profile.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-12-13 22:05:29 -0500
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for ::1 at 2015-12-13 22:05:29 -0500
+
+
+Started GET "/assets/jquery.self-a714331225dda820228db323939889f149aec0127aeb06255646b616ba1ca419.js?body=1" for ::1 at 2015-12-13 22:05:29 -0500
+
+
+Started GET "/assets/jquery_ujs.self-d456baa54c1fa6be2ec3711f0a72ddf7a5b2f34a6b4f515f33767d6207b7d4b3.js?body=1" for ::1 at 2015-12-13 22:05:29 -0500
+
+
+Started GET "/assets/development/react.self-bf407d871f2396ec7dcba5eb91bd3f3955401699aef9b87f48b6e1694c24a078.js?body=1" for ::1 at 2015-12-13 22:05:29 -0500
+
+
+Started GET "/assets/bundle.self-140a5f6b69a9c70c17534d57c83a609ba5c25d1946d30273ce52518dfb8a0749.js?body=1" for ::1 at 2015-12-13 22:05:29 -0500
+
+
+Started GET "/assets/profile.self-19a187bec6cdb96d6de80a61c16c857c613536adf9138476bd367db38d282635.js?body=1" for ::1 at 2015-12-13 22:05:29 -0500
+
+
+Started GET "/assets/tweets.self-19a187bec6cdb96d6de80a61c16c857c613536adf9138476bd367db38d282635.js?body=1" for ::1 at 2015-12-13 22:05:29 -0500
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for ::1 at 2015-12-13 22:05:29 -0500
+
+
+Started GET "/tweets" for ::1 at 2015-12-13 22:05:29 -0500
+Processing by TweetsController#index as */*
+  [1m[35mTweet Load (1.4ms)[0m  SELECT "tweets".* FROM "tweets"  ORDER BY "tweets"."created_at" DESC
+  [1m[36mUser Load (0.8ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" IN (1)[0m
+Completed 200 OK in 13ms (Views: 9.8ms | ActiveRecord: 2.2ms)
+
+
+Started GET "/tweets" for ::1 at 2015-12-13 22:05:32 -0500
+Processing by TweetsController#index as */*
+  [1m[35mTweet Load (0.9ms)[0m  SELECT "tweets".* FROM "tweets"  ORDER BY "tweets"."created_at" DESC
+  [1m[36mUser Load (0.6ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" IN (1)[0m
+Completed 200 OK in 12ms (Views: 9.6ms | ActiveRecord: 1.5ms)
+
+
+Started GET "/" for ::1 at 2015-12-13 22:06:07 -0500
+Processing by HomeController#index as HTML
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  Rendered home/index.html.erb within layouts/application (0.1ms)
+Completed 200 OK in 191ms (Views: 189.7ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/home.self-8e47fed4825384b9266fa1040a4adaa0211fe386d09c7fa88b2e148943f7cacd.css?body=1" for ::1 at 2015-12-13 22:06:08 -0500
+
+
+Started GET "/assets/profile.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-12-13 22:06:08 -0500
+
+
+Started GET "/assets/tweets.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-12-13 22:06:08 -0500
+
+
+Started GET "/assets/jquery.self-a714331225dda820228db323939889f149aec0127aeb06255646b616ba1ca419.js?body=1" for ::1 at 2015-12-13 22:06:08 -0500
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for ::1 at 2015-12-13 22:06:08 -0500
+
+
+Started GET "/assets/development/react.self-bf407d871f2396ec7dcba5eb91bd3f3955401699aef9b87f48b6e1694c24a078.js?body=1" for ::1 at 2015-12-13 22:06:08 -0500
+
+
+Started GET "/assets/jquery_ujs.self-d456baa54c1fa6be2ec3711f0a72ddf7a5b2f34a6b4f515f33767d6207b7d4b3.js?body=1" for ::1 at 2015-12-13 22:06:08 -0500
+
+
+Started GET "/assets/bundle.self-ebeacc3158e25a7fda210c0a7eabcc5c6182053d127afaf6635905dc87040e2e.js?body=1" for ::1 at 2015-12-13 22:06:08 -0500
+
+
+Started GET "/assets/profile.self-19a187bec6cdb96d6de80a61c16c857c613536adf9138476bd367db38d282635.js?body=1" for ::1 at 2015-12-13 22:06:08 -0500
+
+
+Started GET "/assets/tweets.self-19a187bec6cdb96d6de80a61c16c857c613536adf9138476bd367db38d282635.js?body=1" for ::1 at 2015-12-13 22:06:08 -0500
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for ::1 at 2015-12-13 22:06:08 -0500
+
+
+Started GET "/tweets" for ::1 at 2015-12-13 22:06:08 -0500
+Processing by TweetsController#index as */*
+  [1m[36mTweet Load (0.5ms)[0m  [1mSELECT "tweets".* FROM "tweets"  ORDER BY "tweets"."created_at" DESC[0m
+  [1m[35mUser Load (0.4ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" IN (1)
+Completed 200 OK in 9ms (Views: 7.4ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/tweets" for ::1 at 2015-12-13 22:06:09 -0500
+Processing by TweetsController#index as */*
+  [1m[36mTweet Load (0.6ms)[0m  [1mSELECT "tweets".* FROM "tweets"  ORDER BY "tweets"."created_at" DESC[0m
+  [1m[35mUser Load (0.5ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" IN (1)
+Completed 200 OK in 9ms (Views: 7.7ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/" for ::1 at 2015-12-13 22:13:51 -0500
+Processing by HomeController#index as HTML
+  [1m[36mUser Load (0.7ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  Rendered home/index.html.erb within layouts/application (0.2ms)
+Completed 200 OK in 228ms (Views: 225.1ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for ::1 at 2015-12-13 22:13:52 -0500
+
+
+Started GET "/assets/jquery.self-a714331225dda820228db323939889f149aec0127aeb06255646b616ba1ca419.js?body=1" for ::1 at 2015-12-13 22:13:52 -0500
+
+
+Started GET "/assets/tweets.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-12-13 22:13:52 -0500
+
+
+Started GET "/assets/profile.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-12-13 22:13:52 -0500
+
+
+Started GET "/assets/home.self-8e47fed4825384b9266fa1040a4adaa0211fe386d09c7fa88b2e148943f7cacd.css?body=1" for ::1 at 2015-12-13 22:13:52 -0500
+
+
+Started GET "/assets/jquery_ujs.self-d456baa54c1fa6be2ec3711f0a72ddf7a5b2f34a6b4f515f33767d6207b7d4b3.js?body=1" for ::1 at 2015-12-13 22:13:52 -0500
+
+
+Started GET "/assets/development/react.self-bf407d871f2396ec7dcba5eb91bd3f3955401699aef9b87f48b6e1694c24a078.js?body=1" for ::1 at 2015-12-13 22:13:52 -0500
+
+
+Started GET "/assets/bundle.self-2777568a8198954ca5644a38586d5910fe174f706af75523d0189eb8fb5213ff.js?body=1" for ::1 at 2015-12-13 22:13:52 -0500
+
+
+Started GET "/assets/profile.self-19a187bec6cdb96d6de80a61c16c857c613536adf9138476bd367db38d282635.js?body=1" for ::1 at 2015-12-13 22:13:52 -0500
+
+
+Started GET "/assets/tweets.self-19a187bec6cdb96d6de80a61c16c857c613536adf9138476bd367db38d282635.js?body=1" for ::1 at 2015-12-13 22:13:52 -0500
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for ::1 at 2015-12-13 22:13:52 -0500
+
+
+Started GET "/tweets" for ::1 at 2015-12-13 22:13:52 -0500
+Processing by TweetsController#index as */*
+  [1m[35mTweet Load (0.4ms)[0m  SELECT "tweets".* FROM "tweets"  ORDER BY "tweets"."created_at" DESC
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" IN (1)[0m
+Completed 200 OK in 8ms (Views: 6.5ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/" for ::1 at 2015-12-13 22:14:29 -0500
+Processing by HomeController#index as HTML
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  Rendered home/index.html.erb within layouts/application (0.1ms)
+Completed 200 OK in 77ms (Views: 73.3ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/home.self-8e47fed4825384b9266fa1040a4adaa0211fe386d09c7fa88b2e148943f7cacd.css?body=1" for ::1 at 2015-12-13 22:14:29 -0500
+
+
+Started GET "/assets/profile.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-12-13 22:14:29 -0500
+
+
+Started GET "/assets/tweets.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-12-13 22:14:29 -0500
+
+
+Started GET "/assets/jquery.self-a714331225dda820228db323939889f149aec0127aeb06255646b616ba1ca419.js?body=1" for ::1 at 2015-12-13 22:14:29 -0500
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for ::1 at 2015-12-13 22:14:29 -0500
+
+
+Started GET "/assets/jquery_ujs.self-d456baa54c1fa6be2ec3711f0a72ddf7a5b2f34a6b4f515f33767d6207b7d4b3.js?body=1" for ::1 at 2015-12-13 22:14:29 -0500
+
+
+Started GET "/assets/development/react.self-bf407d871f2396ec7dcba5eb91bd3f3955401699aef9b87f48b6e1694c24a078.js?body=1" for ::1 at 2015-12-13 22:14:29 -0500
+
+
+Started GET "/assets/bundle.self-2777568a8198954ca5644a38586d5910fe174f706af75523d0189eb8fb5213ff.js?body=1" for ::1 at 2015-12-13 22:14:29 -0500
+
+
+Started GET "/assets/profile.self-19a187bec6cdb96d6de80a61c16c857c613536adf9138476bd367db38d282635.js?body=1" for ::1 at 2015-12-13 22:14:29 -0500
+
+
+Started GET "/assets/tweets.self-19a187bec6cdb96d6de80a61c16c857c613536adf9138476bd367db38d282635.js?body=1" for ::1 at 2015-12-13 22:14:29 -0500
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for ::1 at 2015-12-13 22:14:29 -0500
+
+
+Started GET "/tweets" for ::1 at 2015-12-13 22:14:30 -0500
+Processing by TweetsController#index as */*
+  [1m[36mTweet Load (1.2ms)[0m  [1mSELECT "tweets".* FROM "tweets"  ORDER BY "tweets"."created_at" DESC[0m
+  [1m[35mUser Load (0.6ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" IN (1)
+Completed 200 OK in 10ms (Views: 7.8ms | ActiveRecord: 1.8ms)
+
+
+Started GET "/" for ::1 at 2015-12-13 22:17:35 -0500
+Processing by HomeController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  Rendered home/index.html.erb within layouts/application (0.1ms)
+Completed 200 OK in 187ms (Views: 185.8ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/home.self-8e47fed4825384b9266fa1040a4adaa0211fe386d09c7fa88b2e148943f7cacd.css?body=1" for ::1 at 2015-12-13 22:17:36 -0500
+
+
+Started GET "/assets/profile.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-12-13 22:17:36 -0500
+
+
+Started GET "/assets/tweets.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-12-13 22:17:36 -0500
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for ::1 at 2015-12-13 22:17:36 -0500
+
+
+Started GET "/assets/jquery_ujs.self-d456baa54c1fa6be2ec3711f0a72ddf7a5b2f34a6b4f515f33767d6207b7d4b3.js?body=1" for ::1 at 2015-12-13 22:17:36 -0500
+
+
+Started GET "/assets/jquery.self-a714331225dda820228db323939889f149aec0127aeb06255646b616ba1ca419.js?body=1" for ::1 at 2015-12-13 22:17:36 -0500
+
+
+Started GET "/assets/bundle.self-2808d6ba330df24555818d80dcd5c0ff31bfb0d40e8f3dcdb3e2bdd36c583480.js?body=1" for ::1 at 2015-12-13 22:17:36 -0500
+
+
+Started GET "/assets/development/react.self-bf407d871f2396ec7dcba5eb91bd3f3955401699aef9b87f48b6e1694c24a078.js?body=1" for ::1 at 2015-12-13 22:17:36 -0500
+
+
+Started GET "/assets/profile.self-19a187bec6cdb96d6de80a61c16c857c613536adf9138476bd367db38d282635.js?body=1" for ::1 at 2015-12-13 22:17:36 -0500
+
+
+Started GET "/assets/tweets.self-19a187bec6cdb96d6de80a61c16c857c613536adf9138476bd367db38d282635.js?body=1" for ::1 at 2015-12-13 22:17:36 -0500
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for ::1 at 2015-12-13 22:17:36 -0500
+
+
+Started GET "/tweets" for ::1 at 2015-12-13 22:17:36 -0500
+Processing by TweetsController#index as */*
+  [1m[35mTweet Load (0.5ms)[0m  SELECT "tweets".* FROM "tweets"  ORDER BY "tweets"."created_at" DESC
+  [1m[36mUser Load (0.6ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" IN (1)[0m
+Completed 200 OK in 10ms (Views: 8.0ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/" for ::1 at 2015-12-13 22:18:14 -0500
+Processing by HomeController#index as HTML
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  Rendered home/index.html.erb within layouts/application (0.1ms)
+Completed 200 OK in 184ms (Views: 181.8ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/home.self-8e47fed4825384b9266fa1040a4adaa0211fe386d09c7fa88b2e148943f7cacd.css?body=1" for ::1 at 2015-12-13 22:18:14 -0500
+
+
+Started GET "/assets/profile.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-12-13 22:18:14 -0500
+
+
+Started GET "/assets/tweets.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-12-13 22:18:14 -0500
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for ::1 at 2015-12-13 22:18:14 -0500
+
+
+Started GET "/assets/jquery_ujs.self-d456baa54c1fa6be2ec3711f0a72ddf7a5b2f34a6b4f515f33767d6207b7d4b3.js?body=1" for ::1 at 2015-12-13 22:18:14 -0500
+
+
+Started GET "/assets/jquery.self-a714331225dda820228db323939889f149aec0127aeb06255646b616ba1ca419.js?body=1" for ::1 at 2015-12-13 22:18:14 -0500
+
+
+Started GET "/assets/development/react.self-bf407d871f2396ec7dcba5eb91bd3f3955401699aef9b87f48b6e1694c24a078.js?body=1" for ::1 at 2015-12-13 22:18:14 -0500
+
+
+Started GET "/assets/bundle.self-708126d0632ceeed471fe8dc3baff0de24f8cf4d5feb7ef80c49865090c32702.js?body=1" for ::1 at 2015-12-13 22:18:14 -0500
+
+
+Started GET "/assets/profile.self-19a187bec6cdb96d6de80a61c16c857c613536adf9138476bd367db38d282635.js?body=1" for ::1 at 2015-12-13 22:18:14 -0500
+
+
+Started GET "/assets/tweets.self-19a187bec6cdb96d6de80a61c16c857c613536adf9138476bd367db38d282635.js?body=1" for ::1 at 2015-12-13 22:18:14 -0500
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for ::1 at 2015-12-13 22:18:14 -0500
+
+
+Started GET "/tweets" for ::1 at 2015-12-13 22:18:15 -0500
+Processing by TweetsController#index as */*
+  [1m[36mTweet Load (0.5ms)[0m  [1mSELECT "tweets".* FROM "tweets"  ORDER BY "tweets"."created_at" DESC[0m
+  [1m[35mUser Load (0.4ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" IN (1)
+Completed 200 OK in 9ms (Views: 7.8ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/" for ::1 at 2015-12-13 22:26:43 -0500
+Processing by HomeController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  Rendered home/index.html.erb within layouts/application (0.1ms)
+Completed 200 OK in 62ms (Views: 60.5ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/home.self-8e47fed4825384b9266fa1040a4adaa0211fe386d09c7fa88b2e148943f7cacd.css?body=1" for ::1 at 2015-12-13 22:26:43 -0500
+
+
+Started GET "/assets/profile.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-12-13 22:26:43 -0500
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for ::1 at 2015-12-13 22:26:44 -0500
+
+
+Started GET "/assets/tweets.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-12-13 22:26:44 -0500
+
+
+Started GET "/assets/jquery.self-a714331225dda820228db323939889f149aec0127aeb06255646b616ba1ca419.js?body=1" for ::1 at 2015-12-13 22:26:44 -0500
+
+
+Started GET "/assets/jquery_ujs.self-d456baa54c1fa6be2ec3711f0a72ddf7a5b2f34a6b4f515f33767d6207b7d4b3.js?body=1" for ::1 at 2015-12-13 22:26:44 -0500
+
+
+Started GET "/assets/development/react.self-bf407d871f2396ec7dcba5eb91bd3f3955401699aef9b87f48b6e1694c24a078.js?body=1" for ::1 at 2015-12-13 22:26:44 -0500
+
+
+Started GET "/assets/bundle.self-708126d0632ceeed471fe8dc3baff0de24f8cf4d5feb7ef80c49865090c32702.js?body=1" for ::1 at 2015-12-13 22:26:44 -0500
+
+
+Started GET "/assets/profile.self-19a187bec6cdb96d6de80a61c16c857c613536adf9138476bd367db38d282635.js?body=1" for ::1 at 2015-12-13 22:26:44 -0500
+
+
+Started GET "/assets/tweets.self-19a187bec6cdb96d6de80a61c16c857c613536adf9138476bd367db38d282635.js?body=1" for ::1 at 2015-12-13 22:26:44 -0500
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for ::1 at 2015-12-13 22:26:44 -0500
+
+
+Started GET "/tweets" for ::1 at 2015-12-13 22:26:44 -0500
+Processing by TweetsController#index as */*
+  [1m[35mTweet Load (0.4ms)[0m  SELECT "tweets".* FROM "tweets"  ORDER BY "tweets"."created_at" DESC
+  [1m[36mUser Load (1.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" IN (1)[0m
+Completed 200 OK in 18ms (Views: 16.3ms | ActiveRecord: 1.4ms)
+
+
+Started GET "/" for ::1 at 2015-12-13 22:27:30 -0500
+Processing by HomeController#index as HTML
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  Rendered home/index.html.erb within layouts/application (0.1ms)
+Completed 200 OK in 199ms (Views: 197.4ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/profile.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-12-13 22:27:31 -0500
+
+
+Started GET "/assets/tweets.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-12-13 22:27:31 -0500
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for ::1 at 2015-12-13 22:27:31 -0500
+
+
+Started GET "/assets/jquery_ujs.self-d456baa54c1fa6be2ec3711f0a72ddf7a5b2f34a6b4f515f33767d6207b7d4b3.js?body=1" for ::1 at 2015-12-13 22:27:31 -0500
+
+
+Started GET "/assets/jquery.self-a714331225dda820228db323939889f149aec0127aeb06255646b616ba1ca419.js?body=1" for ::1 at 2015-12-13 22:27:31 -0500
+
+
+Started GET "/assets/development/react.self-bf407d871f2396ec7dcba5eb91bd3f3955401699aef9b87f48b6e1694c24a078.js?body=1" for ::1 at 2015-12-13 22:27:31 -0500
+
+
+Started GET "/assets/home.self-8e47fed4825384b9266fa1040a4adaa0211fe386d09c7fa88b2e148943f7cacd.css?body=1" for ::1 at 2015-12-13 22:27:31 -0500
+
+
+Started GET "/assets/bundle.self-aecfc7b9cbd3d20826fc16d5f3d8303f4673721c007ec753fddd240461b6727f.js?body=1" for ::1 at 2015-12-13 22:27:31 -0500
+
+
+Started GET "/assets/profile.self-19a187bec6cdb96d6de80a61c16c857c613536adf9138476bd367db38d282635.js?body=1" for ::1 at 2015-12-13 22:27:31 -0500
+
+
+Started GET "/assets/tweets.self-19a187bec6cdb96d6de80a61c16c857c613536adf9138476bd367db38d282635.js?body=1" for ::1 at 2015-12-13 22:27:31 -0500
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for ::1 at 2015-12-13 22:27:31 -0500
+
+
+Started GET "/" for ::1 at 2015-12-13 22:27:42 -0500
+Processing by HomeController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  Rendered home/index.html.erb within layouts/application (0.1ms)
+Completed 200 OK in 55ms (Views: 52.7ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/assets/home.self-8e47fed4825384b9266fa1040a4adaa0211fe386d09c7fa88b2e148943f7cacd.css?body=1" for ::1 at 2015-12-13 22:27:42 -0500
+
+
+Started GET "/assets/profile.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-12-13 22:27:42 -0500
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for ::1 at 2015-12-13 22:27:42 -0500
+
+
+Started GET "/assets/jquery.self-a714331225dda820228db323939889f149aec0127aeb06255646b616ba1ca419.js?body=1" for ::1 at 2015-12-13 22:27:42 -0500
+
+
+Started GET "/assets/jquery_ujs.self-d456baa54c1fa6be2ec3711f0a72ddf7a5b2f34a6b4f515f33767d6207b7d4b3.js?body=1" for ::1 at 2015-12-13 22:27:42 -0500
+
+
+Started GET "/assets/tweets.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-12-13 22:27:42 -0500
+
+
+Started GET "/assets/development/react.self-bf407d871f2396ec7dcba5eb91bd3f3955401699aef9b87f48b6e1694c24a078.js?body=1" for ::1 at 2015-12-13 22:27:42 -0500
+
+
+Started GET "/assets/bundle.self-aecfc7b9cbd3d20826fc16d5f3d8303f4673721c007ec753fddd240461b6727f.js?body=1" for ::1 at 2015-12-13 22:27:42 -0500
+
+
+Started GET "/assets/profile.self-19a187bec6cdb96d6de80a61c16c857c613536adf9138476bd367db38d282635.js?body=1" for ::1 at 2015-12-13 22:27:42 -0500
+
+
+Started GET "/assets/tweets.self-19a187bec6cdb96d6de80a61c16c857c613536adf9138476bd367db38d282635.js?body=1" for ::1 at 2015-12-13 22:27:42 -0500
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for ::1 at 2015-12-13 22:27:42 -0500
+
+
+Started GET "/" for ::1 at 2015-12-13 22:34:29 -0500
+Processing by HomeController#index as HTML
+  [1m[35mUser Load (0.9ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  Rendered home/index.html.erb within layouts/application (0.5ms)
+Completed 200 OK in 1338ms (Views: 1329.1ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/assets/home.self-8e47fed4825384b9266fa1040a4adaa0211fe386d09c7fa88b2e148943f7cacd.css?body=1" for ::1 at 2015-12-13 22:34:32 -0500
+
+
+Started GET "/assets/tweets.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-12-13 22:34:32 -0500
+
+
+Started GET "/assets/profile.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-12-13 22:34:32 -0500
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for ::1 at 2015-12-13 22:34:32 -0500
+
+
+Started GET "/assets/jquery.self-a714331225dda820228db323939889f149aec0127aeb06255646b616ba1ca419.js?body=1" for ::1 at 2015-12-13 22:34:32 -0500
+
+
+Started GET "/assets/jquery_ujs.self-d456baa54c1fa6be2ec3711f0a72ddf7a5b2f34a6b4f515f33767d6207b7d4b3.js?body=1" for ::1 at 2015-12-13 22:34:32 -0500
+
+
+Started GET "/assets/development/react.self-bf407d871f2396ec7dcba5eb91bd3f3955401699aef9b87f48b6e1694c24a078.js?body=1" for ::1 at 2015-12-13 22:34:33 -0500
+
+
+Started GET "/assets/bundle.self-d968af745c9900f660d725465d3a7e5216749cb8e36d8b30fff1241dee8421f1.js?body=1" for ::1 at 2015-12-13 22:34:33 -0500
+
+
+Started GET "/assets/profile.self-19a187bec6cdb96d6de80a61c16c857c613536adf9138476bd367db38d282635.js?body=1" for ::1 at 2015-12-13 22:34:33 -0500
+
+
+Started GET "/assets/tweets.self-19a187bec6cdb96d6de80a61c16c857c613536adf9138476bd367db38d282635.js?body=1" for ::1 at 2015-12-13 22:34:33 -0500
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for ::1 at 2015-12-13 22:34:33 -0500
+
+
+Started GET "/" for ::1 at 2015-12-13 22:37:03 -0500
+Processing by HomeController#index as HTML
+  [1m[36mUser Load (0.8ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  Rendered home/index.html.erb within layouts/application (0.5ms)
+Completed 200 OK in 290ms (Views: 283.1ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/assets/home.self-8e47fed4825384b9266fa1040a4adaa0211fe386d09c7fa88b2e148943f7cacd.css?body=1" for ::1 at 2015-12-13 22:37:05 -0500
+
+
+Started GET "/assets/profile.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-12-13 22:37:05 -0500
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for ::1 at 2015-12-13 22:37:05 -0500
+
+
+Started GET "/assets/tweets.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-12-13 22:37:05 -0500
+
+
+Started GET "/assets/jquery.self-a714331225dda820228db323939889f149aec0127aeb06255646b616ba1ca419.js?body=1" for ::1 at 2015-12-13 22:37:05 -0500
+
+
+Started GET "/assets/jquery_ujs.self-d456baa54c1fa6be2ec3711f0a72ddf7a5b2f34a6b4f515f33767d6207b7d4b3.js?body=1" for ::1 at 2015-12-13 22:37:06 -0500
+
+
+Started GET "/assets/development/react.self-bf407d871f2396ec7dcba5eb91bd3f3955401699aef9b87f48b6e1694c24a078.js?body=1" for ::1 at 2015-12-13 22:37:06 -0500
+
+
+Started GET "/assets/bundle.self-d968af745c9900f660d725465d3a7e5216749cb8e36d8b30fff1241dee8421f1.js?body=1" for ::1 at 2015-12-13 22:37:06 -0500
+
+
+Started GET "/assets/profile.self-19a187bec6cdb96d6de80a61c16c857c613536adf9138476bd367db38d282635.js?body=1" for ::1 at 2015-12-13 22:37:06 -0500
+
+
+Started GET "/assets/tweets.self-19a187bec6cdb96d6de80a61c16c857c613536adf9138476bd367db38d282635.js?body=1" for ::1 at 2015-12-13 22:37:06 -0500
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for ::1 at 2015-12-13 22:37:06 -0500
+
+
+Started GET "/" for ::1 at 2015-12-13 22:38:42 -0500
+Processing by HomeController#index as HTML
+  [1m[35mUser Load (0.8ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  Rendered home/index.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 1426ms (Views: 1419.1ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/assets/profile.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-12-13 22:38:46 -0500
+
+
+Started GET "/assets/jquery.self-a714331225dda820228db323939889f149aec0127aeb06255646b616ba1ca419.js?body=1" for ::1 at 2015-12-13 22:38:46 -0500
+
+
+Started GET "/assets/home.self-8e47fed4825384b9266fa1040a4adaa0211fe386d09c7fa88b2e148943f7cacd.css?body=1" for ::1 at 2015-12-13 22:38:46 -0500
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for ::1 at 2015-12-13 22:38:46 -0500
+
+
+Started GET "/assets/tweets.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-12-13 22:38:46 -0500
+
+
+Started GET "/assets/jquery_ujs.self-d456baa54c1fa6be2ec3711f0a72ddf7a5b2f34a6b4f515f33767d6207b7d4b3.js?body=1" for ::1 at 2015-12-13 22:38:46 -0500
+
+
+Started GET "/assets/development/react.self-bf407d871f2396ec7dcba5eb91bd3f3955401699aef9b87f48b6e1694c24a078.js?body=1" for ::1 at 2015-12-13 22:38:46 -0500
+
+
+Started GET "/assets/bundle.self-f18c31700738665aa9a5905c7d4c1402fac02a77fd0bbab4c6159dbe56e94c11.js?body=1" for ::1 at 2015-12-13 22:38:46 -0500
+
+
+Started GET "/assets/profile.self-19a187bec6cdb96d6de80a61c16c857c613536adf9138476bd367db38d282635.js?body=1" for ::1 at 2015-12-13 22:38:46 -0500
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for ::1 at 2015-12-13 22:38:46 -0500
+
+
+Started GET "/assets/tweets.self-19a187bec6cdb96d6de80a61c16c857c613536adf9138476bd367db38d282635.js?body=1" for ::1 at 2015-12-13 22:38:46 -0500
+
+
+Started GET "/tweets" for ::1 at 2015-12-13 22:38:47 -0500
+Processing by TweetsController#index as */*
+  [1m[36mTweet Load (7.0ms)[0m  [1mSELECT "tweets".* FROM "tweets"  ORDER BY "tweets"."created_at" DESC[0m
+  [1m[35mUser Load (2.1ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" IN (1)
+Completed 200 OK in 60ms (Views: 49.6ms | ActiveRecord: 9.0ms)
+
+
+Started GET "/" for ::1 at 2015-12-13 22:40:02 -0500
+Processing by HomeController#index as HTML
+  [1m[36mUser Load (0.7ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  Rendered home/index.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 767ms (Views: 762.2ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/assets/home.self-8e47fed4825384b9266fa1040a4adaa0211fe386d09c7fa88b2e148943f7cacd.css?body=1" for ::1 at 2015-12-13 22:40:05 -0500
+
+
+Started GET "/assets/tweets.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-12-13 22:40:05 -0500
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for ::1 at 2015-12-13 22:40:05 -0500
+
+
+Started GET "/assets/profile.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-12-13 22:40:05 -0500
+
+
+Started GET "/assets/jquery.self-a714331225dda820228db323939889f149aec0127aeb06255646b616ba1ca419.js?body=1" for ::1 at 2015-12-13 22:40:05 -0500
+
+
+Started GET "/assets/jquery_ujs.self-d456baa54c1fa6be2ec3711f0a72ddf7a5b2f34a6b4f515f33767d6207b7d4b3.js?body=1" for ::1 at 2015-12-13 22:40:05 -0500
+
+
+Started GET "/assets/development/react.self-bf407d871f2396ec7dcba5eb91bd3f3955401699aef9b87f48b6e1694c24a078.js?body=1" for ::1 at 2015-12-13 22:40:05 -0500
+
+
+Started GET "/assets/bundle.self-d1bb0799ae947e0f99070a0d8dec4578e7d90f443842880ed6b3e96ed55fac73.js?body=1" for ::1 at 2015-12-13 22:40:05 -0500
+
+
+Started GET "/assets/profile.self-19a187bec6cdb96d6de80a61c16c857c613536adf9138476bd367db38d282635.js?body=1" for ::1 at 2015-12-13 22:40:05 -0500
+
+
+Started GET "/assets/tweets.self-19a187bec6cdb96d6de80a61c16c857c613536adf9138476bd367db38d282635.js?body=1" for ::1 at 2015-12-13 22:40:05 -0500
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for ::1 at 2015-12-13 22:40:05 -0500
+
+
+Started GET "/tweets" for ::1 at 2015-12-13 22:40:06 -0500
+Processing by TweetsController#index as */*
+  [1m[35mTweet Load (1.5ms)[0m  SELECT "tweets".* FROM "tweets"  ORDER BY "tweets"."created_at" DESC
+  [1m[36mUser Load (1.5ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" IN (1)[0m
+Completed 200 OK in 43ms (Views: 38.6ms | ActiveRecord: 3.1ms)
+
+
+Started GET "/" for ::1 at 2015-12-13 22:42:30 -0500
+Processing by HomeController#index as HTML
+  [1m[35mUser Load (0.6ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  Rendered home/index.html.erb within layouts/application (0.3ms)
+Completed 200 OK in 1036ms (Views: 1028.5ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/assets/home.self-8e47fed4825384b9266fa1040a4adaa0211fe386d09c7fa88b2e148943f7cacd.css?body=1" for ::1 at 2015-12-13 22:42:33 -0500
+
+
+Started GET "/assets/profile.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-12-13 22:42:33 -0500
+
+
+Started GET "/assets/jquery.self-a714331225dda820228db323939889f149aec0127aeb06255646b616ba1ca419.js?body=1" for ::1 at 2015-12-13 22:42:33 -0500
+
+
+Started GET "/assets/tweets.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-12-13 22:42:33 -0500
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for ::1 at 2015-12-13 22:42:33 -0500
+
+
+Started GET "/assets/jquery_ujs.self-d456baa54c1fa6be2ec3711f0a72ddf7a5b2f34a6b4f515f33767d6207b7d4b3.js?body=1" for ::1 at 2015-12-13 22:42:33 -0500
+
+
+Started GET "/assets/bundle.self-9de69d5b15e335f73ece4c8cfd71bfdb94b4d25fe25e4c068676359c8b3b5913.js?body=1" for ::1 at 2015-12-13 22:42:33 -0500
+
+
+Started GET "/assets/development/react.self-bf407d871f2396ec7dcba5eb91bd3f3955401699aef9b87f48b6e1694c24a078.js?body=1" for ::1 at 2015-12-13 22:42:33 -0500
+
+
+Started GET "/assets/profile.self-19a187bec6cdb96d6de80a61c16c857c613536adf9138476bd367db38d282635.js?body=1" for ::1 at 2015-12-13 22:42:33 -0500
+
+
+Started GET "/assets/tweets.self-19a187bec6cdb96d6de80a61c16c857c613536adf9138476bd367db38d282635.js?body=1" for ::1 at 2015-12-13 22:42:33 -0500
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for ::1 at 2015-12-13 22:42:33 -0500
+
+
+Started GET "/tweets" for ::1 at 2015-12-13 22:42:34 -0500
+Processing by TweetsController#index as */*
+  [1m[36mTweet Load (1.5ms)[0m  [1mSELECT "tweets".* FROM "tweets"  ORDER BY "tweets"."created_at" DESC[0m
+  [1m[35mUser Load (1.5ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" IN (1)
+Completed 200 OK in 54ms (Views: 49.9ms | ActiveRecord: 3.0ms)
+
+
+Started GET "/" for ::1 at 2015-12-13 22:43:22 -0500
+Processing by HomeController#index as HTML
+  [1m[36mUser Load (0.8ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  Rendered home/index.html.erb within layouts/application (0.7ms)
+Completed 200 OK in 1143ms (Views: 1129.1ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/assets/home.self-8e47fed4825384b9266fa1040a4adaa0211fe386d09c7fa88b2e148943f7cacd.css?body=1" for ::1 at 2015-12-13 22:43:25 -0500
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for ::1 at 2015-12-13 22:43:25 -0500
+
+
+Started GET "/assets/tweets.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-12-13 22:43:25 -0500
+
+
+Started GET "/assets/profile.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-12-13 22:43:25 -0500
+
+
+Started GET "/assets/jquery_ujs.self-d456baa54c1fa6be2ec3711f0a72ddf7a5b2f34a6b4f515f33767d6207b7d4b3.js?body=1" for ::1 at 2015-12-13 22:43:25 -0500
+
+
+Started GET "/assets/jquery.self-a714331225dda820228db323939889f149aec0127aeb06255646b616ba1ca419.js?body=1" for ::1 at 2015-12-13 22:43:25 -0500
+
+
+Started GET "/assets/development/react.self-bf407d871f2396ec7dcba5eb91bd3f3955401699aef9b87f48b6e1694c24a078.js?body=1" for ::1 at 2015-12-13 22:43:26 -0500
+
+
+Started GET "/assets/bundle.self-9089c28ac6955fa1dda8e872a7acb592295fe2a0a034e158c39bef758403494f.js?body=1" for ::1 at 2015-12-13 22:43:26 -0500
+
+
+Started GET "/assets/profile.self-19a187bec6cdb96d6de80a61c16c857c613536adf9138476bd367db38d282635.js?body=1" for ::1 at 2015-12-13 22:43:26 -0500
+
+
+Started GET "/assets/tweets.self-19a187bec6cdb96d6de80a61c16c857c613536adf9138476bd367db38d282635.js?body=1" for ::1 at 2015-12-13 22:43:26 -0500
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for ::1 at 2015-12-13 22:43:26 -0500
+
+
+Started GET "/tweets" for ::1 at 2015-12-13 22:43:26 -0500
+Processing by TweetsController#index as */*
+  [1m[35mTweet Load (1.5ms)[0m  SELECT "tweets".* FROM "tweets"  ORDER BY "tweets"."created_at" DESC
+  [1m[36mUser Load (1.6ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" IN (1)[0m
+Completed 200 OK in 45ms (Views: 40.6ms | ActiveRecord: 3.2ms)
+
+
+Started GET "/" for ::1 at 2015-12-13 22:44:13 -0500
+Processing by HomeController#index as HTML
+  [1m[35mUser Load (0.6ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  Rendered home/index.html.erb within layouts/application (0.3ms)
+Completed 200 OK in 736ms (Views: 731.0ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/assets/home.self-8e47fed4825384b9266fa1040a4adaa0211fe386d09c7fa88b2e148943f7cacd.css?body=1" for ::1 at 2015-12-13 22:44:16 -0500
+
+
+Started GET "/assets/profile.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-12-13 22:44:16 -0500
+
+
+Started GET "/assets/jquery.self-a714331225dda820228db323939889f149aec0127aeb06255646b616ba1ca419.js?body=1" for ::1 at 2015-12-13 22:44:16 -0500
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for ::1 at 2015-12-13 22:44:16 -0500
+
+
+Started GET "/assets/tweets.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-12-13 22:44:16 -0500
+
+
+Started GET "/assets/jquery_ujs.self-d456baa54c1fa6be2ec3711f0a72ddf7a5b2f34a6b4f515f33767d6207b7d4b3.js?body=1" for ::1 at 2015-12-13 22:44:16 -0500
+
+
+Started GET "/assets/development/react.self-bf407d871f2396ec7dcba5eb91bd3f3955401699aef9b87f48b6e1694c24a078.js?body=1" for ::1 at 2015-12-13 22:44:16 -0500
+
+
+Started GET "/assets/bundle.self-c72f3eeffce1cf8e6540fa5a737e28489f6357febfed3a30ba42442f757e9f16.js?body=1" for ::1 at 2015-12-13 22:44:16 -0500
+
+
+Started GET "/assets/profile.self-19a187bec6cdb96d6de80a61c16c857c613536adf9138476bd367db38d282635.js?body=1" for ::1 at 2015-12-13 22:44:16 -0500
+
+
+Started GET "/assets/tweets.self-19a187bec6cdb96d6de80a61c16c857c613536adf9138476bd367db38d282635.js?body=1" for ::1 at 2015-12-13 22:44:16 -0500
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for ::1 at 2015-12-13 22:44:16 -0500
+
+
+Started GET "/tweets" for ::1 at 2015-12-13 22:44:17 -0500
+Processing by TweetsController#index as */*
+  [1m[36mTweet Load (1.5ms)[0m  [1mSELECT "tweets".* FROM "tweets"  ORDER BY "tweets"."created_at" DESC[0m
+  [1m[35mUser Load (1.6ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" IN (1)
+Completed 200 OK in 150ms (Views: 145.2ms | ActiveRecord: 3.1ms)
+
+
+Started GET "/" for ::1 at 2015-12-13 22:46:13 -0500
+Processing by HomeController#index as HTML
+  [1m[36mUser Load (0.7ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  Rendered home/index.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 897ms (Views: 891.6ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/assets/home.self-8e47fed4825384b9266fa1040a4adaa0211fe386d09c7fa88b2e148943f7cacd.css?body=1" for ::1 at 2015-12-13 22:46:16 -0500
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for ::1 at 2015-12-13 22:46:16 -0500
+
+
+Started GET "/assets/jquery_ujs.self-d456baa54c1fa6be2ec3711f0a72ddf7a5b2f34a6b4f515f33767d6207b7d4b3.js?body=1" for ::1 at 2015-12-13 22:46:16 -0500
+
+
+Started GET "/assets/profile.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-12-13 22:46:16 -0500
+
+
+Started GET "/assets/tweets.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-12-13 22:46:16 -0500
+
+
+Started GET "/assets/jquery.self-a714331225dda820228db323939889f149aec0127aeb06255646b616ba1ca419.js?body=1" for ::1 at 2015-12-13 22:46:16 -0500
+
+
+Started GET "/assets/development/react.self-bf407d871f2396ec7dcba5eb91bd3f3955401699aef9b87f48b6e1694c24a078.js?body=1" for ::1 at 2015-12-13 22:46:17 -0500
+
+
+Started GET "/assets/bundle.self-f7992363df3ded6e4b6b14bb6a9fd5829f51c65c8d9f264b98774db4a6d9329b.js?body=1" for ::1 at 2015-12-13 22:46:17 -0500
+
+
+Started GET "/assets/profile.self-19a187bec6cdb96d6de80a61c16c857c613536adf9138476bd367db38d282635.js?body=1" for ::1 at 2015-12-13 22:46:17 -0500
+
+
+Started GET "/assets/tweets.self-19a187bec6cdb96d6de80a61c16c857c613536adf9138476bd367db38d282635.js?body=1" for ::1 at 2015-12-13 22:46:17 -0500
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for ::1 at 2015-12-13 22:46:17 -0500
+
+
+Started GET "/tweets" for ::1 at 2015-12-13 22:46:18 -0500
+Processing by TweetsController#index as */*
+  [1m[35mTweet Load (1.5ms)[0m  SELECT "tweets".* FROM "tweets"  ORDER BY "tweets"."created_at" DESC
+  [1m[36mUser Load (1.7ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" IN (1)[0m
+Completed 200 OK in 142ms (Views: 136.5ms | ActiveRecord: 3.3ms)
+
+
+Started GET "/" for ::1 at 2015-12-13 22:47:39 -0500
+Processing by HomeController#index as HTML
+  [1m[35mUser Load (1.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  Rendered home/index.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 760ms (Views: 751.7ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/assets/home.self-8e47fed4825384b9266fa1040a4adaa0211fe386d09c7fa88b2e148943f7cacd.css?body=1" for ::1 at 2015-12-13 22:47:42 -0500
+
+
+Started GET "/assets/profile.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-12-13 22:47:42 -0500
+
+
+Started GET "/assets/tweets.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-12-13 22:47:42 -0500
+
+
+Started GET "/assets/jquery.self-a714331225dda820228db323939889f149aec0127aeb06255646b616ba1ca419.js?body=1" for ::1 at 2015-12-13 22:47:42 -0500
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for ::1 at 2015-12-13 22:47:42 -0500
+
+
+Started GET "/assets/jquery_ujs.self-d456baa54c1fa6be2ec3711f0a72ddf7a5b2f34a6b4f515f33767d6207b7d4b3.js?body=1" for ::1 at 2015-12-13 22:47:42 -0500
+
+
+Started GET "/assets/bundle.self-8d31ae9a15a9026def4c4737e9920d736546b42a9571b16eeb1aa3f6fdd79377.js?body=1" for ::1 at 2015-12-13 22:47:42 -0500
+
+
+Started GET "/assets/development/react.self-bf407d871f2396ec7dcba5eb91bd3f3955401699aef9b87f48b6e1694c24a078.js?body=1" for ::1 at 2015-12-13 22:47:42 -0500
+
+
+Started GET "/assets/profile.self-19a187bec6cdb96d6de80a61c16c857c613536adf9138476bd367db38d282635.js?body=1" for ::1 at 2015-12-13 22:47:42 -0500
+
+
+Started GET "/assets/tweets.self-19a187bec6cdb96d6de80a61c16c857c613536adf9138476bd367db38d282635.js?body=1" for ::1 at 2015-12-13 22:47:42 -0500
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for ::1 at 2015-12-13 22:47:42 -0500
+
+
+Started GET "/tweets" for ::1 at 2015-12-13 22:47:44 -0500
+Processing by TweetsController#index as */*
+  [1m[36mTweet Load (1.5ms)[0m  [1mSELECT "tweets".* FROM "tweets"  ORDER BY "tweets"."created_at" DESC[0m
+  [1m[35mUser Load (1.6ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" IN (1)
+Completed 200 OK in 45ms (Views: 40.4ms | ActiveRecord: 3.1ms)
+
+
+Started GET "/" for ::1 at 2015-12-13 22:47:52 -0500
+Processing by HomeController#index as HTML
+  [1m[36mUser Load (1.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  Rendered home/index.html.erb within layouts/application (2.7ms)
+Completed 200 OK in 1213ms (Views: 1201.8ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/assets/home.self-8e47fed4825384b9266fa1040a4adaa0211fe386d09c7fa88b2e148943f7cacd.css?body=1" for ::1 at 2015-12-13 22:47:55 -0500
+
+
+Started GET "/assets/tweets.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-12-13 22:47:56 -0500
+
+
+Started GET "/assets/profile.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-12-13 22:47:56 -0500
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for ::1 at 2015-12-13 22:47:56 -0500
+
+
+Started GET "/assets/jquery_ujs.self-d456baa54c1fa6be2ec3711f0a72ddf7a5b2f34a6b4f515f33767d6207b7d4b3.js?body=1" for ::1 at 2015-12-13 22:47:56 -0500
+
+
+Started GET "/assets/jquery.self-a714331225dda820228db323939889f149aec0127aeb06255646b616ba1ca419.js?body=1" for ::1 at 2015-12-13 22:47:56 -0500
+
+
+Started GET "/assets/development/react.self-bf407d871f2396ec7dcba5eb91bd3f3955401699aef9b87f48b6e1694c24a078.js?body=1" for ::1 at 2015-12-13 22:47:56 -0500
+
+
+Started GET "/assets/bundle.self-8d31ae9a15a9026def4c4737e9920d736546b42a9571b16eeb1aa3f6fdd79377.js?body=1" for ::1 at 2015-12-13 22:47:56 -0500
+
+
+Started GET "/assets/profile.self-19a187bec6cdb96d6de80a61c16c857c613536adf9138476bd367db38d282635.js?body=1" for ::1 at 2015-12-13 22:47:56 -0500
+
+
+Started GET "/assets/tweets.self-19a187bec6cdb96d6de80a61c16c857c613536adf9138476bd367db38d282635.js?body=1" for ::1 at 2015-12-13 22:47:56 -0500
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for ::1 at 2015-12-13 22:47:56 -0500
+
+
+Started GET "/tweets" for ::1 at 2015-12-13 22:47:57 -0500
+Processing by TweetsController#index as */*
+  [1m[35mTweet Load (1.5ms)[0m  SELECT "tweets".* FROM "tweets"  ORDER BY "tweets"."created_at" DESC
+  [1m[36mUser Load (1.6ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" IN (1)[0m
+Completed 200 OK in 53ms (Views: 47.8ms | ActiveRecord: 3.1ms)
+
+
+Started GET "/" for ::1 at 2015-12-13 22:53:32 -0500
+Processing by HomeController#index as HTML
+  [1m[35mUser Load (0.9ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  Rendered home/index.html.erb within layouts/application (0.5ms)
+Completed 200 OK in 856ms (Views: 847.7ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/assets/home.self-8e47fed4825384b9266fa1040a4adaa0211fe386d09c7fa88b2e148943f7cacd.css?body=1" for ::1 at 2015-12-13 22:53:34 -0500
+
+
+Started GET "/assets/profile.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-12-13 22:53:34 -0500
+
+
+Started GET "/assets/tweets.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-12-13 22:53:34 -0500
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for ::1 at 2015-12-13 22:53:34 -0500
+
+
+Started GET "/assets/jquery.self-a714331225dda820228db323939889f149aec0127aeb06255646b616ba1ca419.js?body=1" for ::1 at 2015-12-13 22:53:34 -0500
+
+
+Started GET "/assets/jquery_ujs.self-d456baa54c1fa6be2ec3711f0a72ddf7a5b2f34a6b4f515f33767d6207b7d4b3.js?body=1" for ::1 at 2015-12-13 22:53:34 -0500
+
+
+Started GET "/assets/bundle.self-826ae010acfd1614d261bf5f6af4ccb8fc51f5d2b7f172c69ba13d474806adb9.js?body=1" for ::1 at 2015-12-13 22:53:35 -0500
+
+
+Started GET "/assets/development/react.self-bf407d871f2396ec7dcba5eb91bd3f3955401699aef9b87f48b6e1694c24a078.js?body=1" for ::1 at 2015-12-13 22:53:35 -0500
+
+
+Started GET "/assets/profile.self-19a187bec6cdb96d6de80a61c16c857c613536adf9138476bd367db38d282635.js?body=1" for ::1 at 2015-12-13 22:53:35 -0500
+
+
+Started GET "/assets/tweets.self-19a187bec6cdb96d6de80a61c16c857c613536adf9138476bd367db38d282635.js?body=1" for ::1 at 2015-12-13 22:53:35 -0500
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for ::1 at 2015-12-13 22:53:35 -0500
+
+
+Started GET "/tweets" for ::1 at 2015-12-13 22:53:36 -0500
+Processing by TweetsController#index as */*
+  [1m[36mTweet Load (1.6ms)[0m  [1mSELECT "tweets".* FROM "tweets"  ORDER BY "tweets"."created_at" DESC[0m
+  [1m[35mUser Load (1.5ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" IN (1)
+Completed 200 OK in 32ms (Views: 27.4ms | ActiveRecord: 3.1ms)
