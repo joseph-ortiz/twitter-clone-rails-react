@@ -8,5 +8,11 @@ export default {
 			actionType: ActionTypes.RECIEVED_TWEETS,
 			rawTweets
 		}); 
+	},
+	receivedOneTweet(rawTweet) {
+		AppDispatcher.dispatch({
+		  actionType: ActionTypes.RECIEVED_ONE_TWEET,
+		  rawTweet
+		});
 	}
 }

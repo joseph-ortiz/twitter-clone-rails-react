@@ -10,32 +10,11 @@ let getAppState =  () => {
  return { tweetsList: TweetStore.getAll() };
 }
 class Main extends React.Component {
-      
 	  constructor(props){
 	  	super(props);
 		this.state = getAppState();
 		this._onChange = this._onChange.bind(this);
 	  }
-	  addTweet(tweetToAdd){
-		  /*		  console.log(tweetToAdd);
-		  $.post("/tweets", { body: tweetToAdd })
-		  .success( savedTweet => { 
-			  console.log(savedTweet);
-		    let newTweetsList = this.state.tweetsList;
-		    newTweetsList.unshift(savedTweet);
-		    this.setState(this.formattedTweets(newTweetsList));
-		  })
-		  .error(error => console.log(error));*/
-	  }
-	  formattedTweets(tweetsList){
-		  /*		  let formattedList = tweetsList.map( tweet => {
-			tweet.formattedDate = moment(tweet.created_at).fromNow();
-			return tweet
-		  });
-		  return {
-		    tweetsList: formattedList
-		    }*/
-	}
 	  componentDidMount() {
 		   TweetStore.addChangeListener(this._onChange);
 	  }
@@ -44,12 +23,12 @@ class Main extends React.Component {
 	  }
 	  _onChange() {
 		console.log(5, "Main._onChange"); 
-		  this.setState(getAppState());
+		this.setState(getAppState());
 	  }
 	  render() {
 	  return  (
 		  <div className="container">
-			  <TweetBox sendTweet={this.addTweet.bind(this)}/>
+			  <TweetBox />
 			  <TweetsList tweets={this.state.tweetsList}/>
 		</div>
 	  );
