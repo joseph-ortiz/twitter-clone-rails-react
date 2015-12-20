@@ -1,8 +1,9 @@
+import React from 'react';
 import TweetActions from "../actions/TweetActions";
 
 export default class Tweetbox extends React.Component {
-  sendTweet(event){
-	TweetActions.sendTweet(this.refs.tweetTextArea.value);
+	sendTweet(event){  
+		TweetActions.sendTweet(this.refs.tweetTextArea.value);
 	}
 	render() {
 		return (
