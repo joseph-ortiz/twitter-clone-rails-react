@@ -1,6 +1,6 @@
 import React from 'react';
-import TweetBox from './TweetBox';
-import TweetsList from './TweetsList';
+import { Link } from 'react-router';
+import TweetBox from './TweetBox'; import TweetsList from './TweetsList';
 import TweetStore from '../stores/TweetStore';
 
 import TweetActions from '../actions/TweetActions';
@@ -8,30 +8,31 @@ import TweetActions from '../actions/TweetActions';
 TweetActions.getAllTweets();
 
 let getAppState =  () => {
- return { tweetsList: TweetStore.getAll() };
+	return { tweetsList: TweetStore.getAll() };
 }
 export default class Index extends React.Component {
-	  constructor(props){
-	  	super(props);
+	constructor(props){
+		super(props);
 		this.state = getAppState();
 		this._onChange = this._onChange.bind(this);
-	  }
-	  componentDidMount() {
-		   TweetStore.addChangeListener(this._onChange);
-	  }
-	  componentWillUnmount() {
-		  TweetStore.removeChangeListener(this._onChange);
-	  }
-	  _onChange() {
-		console.log(5, "Main._onChange"); 
+	}
+	componentDidMount() {
+		TweetStore.addChangeListener(this._onChange);
+	}
+	componentWillUnmount() {
+		TweetStore.removeChangeListener(this._onChange);
+	}
+	_onChange() {
+		console.log(5, "Main._onChange");
 		this.setState(getAppState());
-	  }
-	  render() {
-	  return  (
-		  <div className="container">
-			  <TweetBox />
-			  <TweetsList tweets={this.state.tweetsList}/>
-		</div>
-	  );
-  }
+	}
+	render() {
+		return  (
+			<div className="container">
+				<Link to="/follow">Who to follow</Link>
+				<TweetBox />
+				<TweetsList tweets={this.state.tweetsList}/>
+				</div>
+		);
+	}
 }
