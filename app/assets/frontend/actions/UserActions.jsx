@@ -1,8 +1,11 @@
 import API from "../API"
 
 export default {
-  getAllUsers() {
-    console.log(1, "Get AllUsers API");
-    API.getAllUsers();
-  }
+	getAllUsers() {
+		console.log(1, "Get AllUsers API");
+		API.getAllUsers();
+	},
+	followUser(userId) {
+		API.followUser(userId);
+	}
 }

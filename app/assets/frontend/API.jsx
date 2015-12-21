@@ -16,5 +16,10 @@ export default {
 		$.get("/followers/random")
 		.success( rawUsers => ServerActions.receivedUsers(rawUsers) )
 		.error( e => console.log(e));
+	},
+	followUser(userId) {
+		$.post("/followers", { user_id: userId } )
+		.success( rawFollower => ServerActions.receivedOneFollower(rawFollower ) )
+		.error( e => console.log(e));
 	}
 }
